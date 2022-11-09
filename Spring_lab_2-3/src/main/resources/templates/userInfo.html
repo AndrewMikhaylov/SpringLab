@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dddddddddddddddddddd</title>
+</head>
+<body>
+
+</div>
+<table border="3">
+    <tr>
+        <th>Lesson</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Group</th>
+        <th>Present</th>
+        <th>Mark</th>
+    </tr>
+
+    <div th:switch="${isT}">
+        <div th:each="ss:${lessson}">
+            <div th:case="${ss.getTeacherList().getTeachCod()}">
+                <tr th:each="less1:${lessson}">
+                    <div th:if="${less1.getTeacherList().getTeachCod().equals(isT)}">
+
+                        <td th:text="${less1.getTeacherList().getLessonName()}"></td>
+                        <td th:text="${less1.getStudent().getName()}"></td>
+                        <td th:text="${less1.getStudent().getSurname()}"></td>
+                        <td th:text="${less1.getStudent().getGroup()}"></td>
+                        <td th:text="${less1.isPresent()}"></td>
+                        <td th:text="${less1.getMark()}"></td>
+                        <form action="eee">
+                            <td><input name="id" type="hidden" th:value="${less1.getId()}"></td>
+                            <td><input type="submit"></td>
+                        </form>
+                    </div>
+            </div>
+            </tr>
+        </div>
+        <div th:case="*">
+            <tr th:each="less:${lessson}">
+                <td th:text="${less.getTeacherList().getLessonName()}"></td>
+                <td th:text="${less.getStudent().getName()}"></td>
+                <td th:text="${less.getStudent().getSurname()}"></td>
+                <td th:text="${less.getStudent().getGroup()}"></td>
+                <td th:text="${less.isPresent()}"></td>
+                <td th:text="${less.getMark()}"></td>
+            </tr>
+        </div>
+
+    </div>
+
+
+    </tr>
+
+</table>
+
+
+</body>
+</html>

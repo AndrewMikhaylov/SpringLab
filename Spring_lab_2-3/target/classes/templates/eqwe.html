@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fjhskhvdfs</title>
+</head>
+<body>
+<form action="edit">
+    <table border="10">
+    <tr>
+        <th>Lesson</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Group</th>
+        <th>Present</th>
+        <th>Mark</th>
+    </tr>
+    <tr >
+        <td th:text="${lessson.getTeacherList().getLessonName()}"></td>
+        <td th:text="${lessson.getStudent().getName()}"></td>
+        <td th:text="${lessson.getStudent().getSurname()}"></td>
+        <td th:text="${lessson.getStudent().getGroup()}"></td>
+        <td><input  name="a" type="checkbox" ></td>
+        <td><input  name="b" type="number" required ></td>
+        <td><input  name="id" type="hidden" th:value="${lessson.getId()}"></td>
+
+    </tr>
+
+    </table>
+
+<input type="submit">
+</form>
+</body>
+</html>
